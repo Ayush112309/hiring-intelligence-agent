@@ -1,0 +1,10 @@
+We are hiring a Data Analyst Intern.
+
+Requirements:
+- Python
+- SQL
+- Excel
+
+Preferred:
+- Power BI
+- Statistics
