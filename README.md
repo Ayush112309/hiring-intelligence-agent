@@ -1,5 +1,8 @@
-```markdown
 # 🤖 Hiring Intelligence Agent
+
+> A multi-agent system that automates resume screening, candidate ranking, and hiring decisions with explainable insights.
+
+---
 
 ## 🚀 Problem Statement
 
@@ -9,7 +12,9 @@ Recruiters often spend significant time manually screening resumes against job d
 - Subjective  
 - Difficult to scale  
 
-There is a need for an automated system that can:
+### Goal
+
+Build an automated system that can:
 
 - Analyze job requirements  
 - Evaluate multiple resumes  
@@ -27,86 +32,87 @@ This project presents a **Hiring Intelligence Agent**, a multi-agent system that
 - Generates structured hiring decisions  
 - Provides explainable insights and recommendations  
 
-The system simulates a real-world hiring pipeline using an **agentic workflow**, where each agent performs a specialized task.
+The system simulates a real-world hiring pipeline using an agentic workflow, where each agent performs a specialized task.
 
 ---
 
 ## 🧠 Architecture
 
-The system is designed as a **multi-agent workflow**, where each agent performs a specific role.
+The system is designed as a multi-agent workflow, where each agent performs a specific role.
 
-### 🔄 Workflow Overview
+### Workflow Overview
 
-```
-
+```text
 User Input (JD + Resumes)
-↓
+        ↓
 Planner Agent
-↓
+        ↓
 JD Analyzer Agent
-↓
+        ↓
 Resume Parser Agent
-↓
+        ↓
 Matcher Agent
-↓
+        ↓
 Decision Agent
-↓
+        ↓
 Ranking & Output
-
 ````
 
 ---
 
-### 🤖 Agents
+### Agents
 
 **1. Planner Agent**
-- Defines execution flow
+
+* Defines execution flow
 
 **2. JD Analyzer Agent**
-- Extracts required skills
+
+* Extracts required skills
 
 **3. Resume Parser Agent**
-- Extracts name + skills from PDFs  
-- Handles noisy data  
+
+* Extracts name and skills from PDFs
+* Handles noisy data
 
 **4. Matcher Agent**
-- Computes match score  
-- Identifies matched & missing skills  
+
+* Computes match score
+* Identifies matched and missing skills
 
 **5. Decision Agent**
-- Outputs:
-  - Decision (Shortlist / Consider / Reject)  
-  - Confidence score  
-  - Insights  
-  - Recommendations  
+
+* Produces hiring decision (Shortlist / Consider / Reject)
+* Provides confidence score
+* Generates insights and recommendations
 
 ---
 
-### 📦 Structured Output
+### Structured Output
 
-- Implemented using **Pydantic**
-- Ensures consistent JSON outputs
-- Improves reliability
+* Implemented using Pydantic
+* Ensures consistent JSON outputs
+* Improves reliability
 
 ---
 
-### ⚙️ Design Highlights
+### Design Highlights
 
-- Modular agent-based system  
-- Explainable decision-making  
-- Semantic skill matching  
-- Robust PDF parsing  
+* Modular agent-based system
+* Explainable decision-making
+* Semantic skill matching
+* Robust PDF parsing
 
 ---
 
 ## ⚙️ How to Run
 
-### 1. Clone Repo
+### 1. Clone the Repository
 
 ```bash
 git clone <your-repo-link>
 cd hiring-agent
-````
+```
 
 ### 2. Install Dependencies
 
@@ -122,13 +128,13 @@ Place resumes in:
 data/sample_resumes/
 ```
 
-Update job description:
+Update job description in:
 
 ```
 data/sample_jd.txt
 ```
 
-### 4. Run
+### 4. Run the Pipeline
 
 ```bash
 python main.py
@@ -138,36 +144,19 @@ python main.py
 
 ## 📊 Example Output
 
-```
+```text
 🏆 Final Ranking:
 
 1. Sneha Iyer
    Score: 100% | Decision: Shortlist | Confidence: 0.9
    Missing Skills: []
-   Insight: 4/4 required skills matched. Matched: ['statistics', 'excel', 'python', 'sql']. Missing: [].
-   Recommendation: Proceed to interview
+   Insight: 4/4 required skills matched
 
 2. Rohan Mehta
    Score: 55% | Decision: Consider | Confidence: 0.75
-   Missing Skills: ['statistics', 'excel']
-   Insight: 2/4 required skills matched. Matched: ['python', 'sql']. Missing: ['statistics', 'excel'].
-   Recommendation: Improve skills in: ['statistics', 'excel']
 
 3. Amit Verma
    Score: 0% | Decision: Reject | Confidence: 0.6
-   Missing Skills: ['statistics', 'excel', 'python', 'sql']
-   Insight: 0/4 required skills matched. Matched: []. Missing: ['statistics', 'excel', 'python', 'sql'].
-   Recommendation: Needs improvement in: ['statistics', 'excel', 'python', 'sql']
-
-⭐ TOP CANDIDATE SUMMARY
-Name: Sneha Iyer
-Score: 100%
-Why: 4/4 required skills matched. Matched: ['statistics', 'excel', 'python', 'sql']. Missing: [].
-
-📊 SUMMARY
-Shortlisted: ['Sneha Iyer']
-Consider: ['Rohan Mehta']
-Rejected: ['Amit Verma']
 ```
 
 ---
@@ -177,17 +166,17 @@ Rejected: ['Amit Verma']
 * LLM-based reasoning
 * Semantic embeddings for skill matching
 * Weighted scoring system
-* Better resume parsing (experience/projects)
+* Improved resume parsing (experience and projects)
 * LangGraph-based workflow
 * UI dashboard for recruiters
 * Database integration
-* Bias & fairness improvements
+* Bias and fairness improvements
 
 ---
 
 ## 🎯 Summary
 
-This project demonstrates how **agentic workflows** can automate real-world decision systems like hiring.
+This project demonstrates how agentic workflows can automate real-world decision systems like hiring.
 
 It combines:
 
@@ -196,5 +185,3 @@ It combines:
 * Explainable reasoning
 
 to create a scalable hiring intelligence system.
-
-```
